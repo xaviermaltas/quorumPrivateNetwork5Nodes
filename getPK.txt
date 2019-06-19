@@ -1,0 +1,20 @@
+[Inside nodejs]
+var keythereum = require("keythereum");
+
+var datadir = "/home/xavier/Desktop/QuorumProjects/functional_5nodesRTGS/qdata/dd2"
+var datadir = "/home/xavier/Desktop/5nodesNetwork_modifiedFiles_11062019/extendedKeys/node2/geth"
+
+var address= "0x_________________"
+const password = "node_"
+
+var keyObject = keythereum.importFromFile(address, datadir);
+var privateKey = keythereum.recover(password, keyObject);
+console.log(privateKey.toString('hex'));
+
+
+[Private Keys]
+Address : 207058d981e40615783b60d81935017f0d7d8d05
+PrivateKey : 237485853b9ba0ea149cbe08a5aeac3194ad4c8dba39d2a7dbaecb7d3ca99748
+
+Address : 4cc05127d4ec730fe4f15995e2f920e60d481685
+PrivateKey : b24bd80c4eb721ef144e342990ba3ca2b9dd3de0073bb24cd04cf0a32c3b9279
