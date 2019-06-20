@@ -40,7 +40,7 @@ set -u
 set -e
 
 #GLOBAL_ARGS=" --raft --rpc --rpcaddr 0.0.0.0 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum --emitcheckpoints"
-GLOBAL_ARGS=" --raft --rpc --rpcaddr 127.0.0.1 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,rpc,web3 --emitcheckpoints"
+GLOBAL_ARGS=" --networkid 9354 --raft --rpc --rpcaddr 127.0.0.1 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,rpc,web3 --emitcheckpoints"
 
 echo "[*] Starting Constellation nodes"
 constellation-node tm1.conf 2>> qdata/logs/constellation1.log &
@@ -62,7 +62,7 @@ echo "[*] Starting node 3 - Bank 3"
 geth --datadir qdata/dd3 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50403 --rpcport 22002 --port 21002 2>>qdata/logs/3.log &
 
 echo "[*] Starting node 4 - Regulator"
-geth --rpccorsdomain "*" --datadir qdata/dd4 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50404 --rpcport 22003 --port 21003 2>>qdata/logs/4.log &
+geth --datadir qdata/dd4 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50404 --rpcport 22003 --port 21003 2>>qdata/logs/4.log &
 
 echo "[*] Starting node 5 - Observer"
 geth --datadir qdata/dd5 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50405 --rpcport 22004 --port 21004 2>>qdata/logs/5.log &
