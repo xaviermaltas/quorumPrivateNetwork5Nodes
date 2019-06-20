@@ -68,6 +68,23 @@ echo "[*] Starting node 5 - Observer"
 geth --datadir qdata/dd5 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50405 --rpcport 22004 --port 21004 2>>qdata/logs/5.log &
 
 echo "[*] Waiting for nodes to start"
+
+# echo "[*] Starting node 1 - Bank 1"
+# PRIVATE_CONFIG=tm1.conf nohup geth --datadir qdata/dd1 $GLOBAL_ARGS --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
+
+# echo "[*] Starting node 2 - Bank 2"
+# PRIVATE_CONFIG=tm2.conf nohup geth --datadir qdata/dd2 $GLOBAL_ARGS --raftport 50402 --rpcport 22001 --port 21001 2>>qdata/logs/2.log &
+
+# echo "[*] Starting node 3 - Bank 3"
+# PRIVATE_CONFIG=tm3.conf nohup geth --datadir qdata/dd3 $GLOBAL_ARGS --raftport 50403 --rpcport 22002 --port 21002 2>>qdata/logs/3.log &
+
+# echo "[*] Starting node 4 - Regulator"
+# PRIVATE_CONFIG=tm4.conf nohup geth --rpccorsdomain "*" --datadir qdata/dd4 $GLOBAL_ARGS --raftport 50404 --rpcport 22003 --port 21003 2>>qdata/logs/4.log &
+
+# echo "[*] Starting node 5 - Observer"
+# PRIVATE_CONFIG=tm5.conf nohup geth --datadir qdata/dd5 $GLOBAL_ARGS --raftport 50405 --rpcport 22004 --port 21004 2>>qdata/logs/5.log &
+
+# echo "[*] Waiting for nodes to start"
 sleep 10
 
 echo "All nodes configured. See 'qdata/logs' for logs, and run e.g. 'geth attach ipc:qdata/dd1/geth.ipc' to attach to the node"
