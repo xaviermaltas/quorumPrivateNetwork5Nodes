@@ -18,7 +18,7 @@ module.exports = {
     },
 
     quorumNet: {
-      host: "localhost",
+      host: "127.0.0.1",
       port: 22000, // was 8545
       network_id: 9354, // Match any network id
       gasPrice: 0x0,
@@ -26,13 +26,13 @@ module.exports = {
       type: "quorum" // needed for Truffle to support Quorum
     },
 
-	quorumNetBis: {
-		host: "localhost",
-		port: 22000, // was 8545
-		network_id: 9354, // Match any network id
-		gasPrice: 0x0,
-		gas: 0xfffff
-	}
+    quorumNetBis: {
+      host: "127.0.0.1",
+      port: 22000, // was 8545
+      network_id: 9354, // Match any network id
+      gasPrice: 0x0,
+      gas: 0xfffff
+    }
 
     // "truffle-hdwallet-provider": "0.0.6",
     // localPrivateNet :{
