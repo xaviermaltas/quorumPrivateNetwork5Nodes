@@ -1,4 +1,4 @@
-# #!/bin/bash
+# #!/bin/bash ORIGINAL SH
 # set -u
 # set -e
 
@@ -35,9 +35,34 @@
 # echo "All nodes configured. See 'qdata/logs' for logs, and run e.g. 'geth attach ipc:qdata/dd4/geth.ipc' to attach to the RTGS Regulator Geth node"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #!/bin/bash
 set -u
 set -e
+
+#   --rpc                         Enable the HTTP-RPC server
+#   --rpcaddr "127.0.0.1"         HTTP-RPC server listening interface
+#   --rpcport "8545"              HTTP-RPC server listening port
+#   --rpcapi "db,eth,net,web3"    API's offered over the HTTP-RPC interface (llibraries)
+#   --rpccorsdomain               Domains from which to accept cross origin requests (browser enforced)
+
+# The defaults for --rpcaddr, --rpcport and --rpcapi will allow the regis.nu webpage to connect to your local geth node. 
+# You will however need to configure the --rpccorsdomain to allow your web browser to get access to your local Ethereum node.
+
+
 
 #GLOBAL_ARGS=" --raft --rpc --rpcaddr 0.0.0.0 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum --emitcheckpoints"
 GLOBAL_ARGS=" --networkid 9354 --raft --rpc --rpcaddr 127.0.0.1 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,rpc,web3 --emitcheckpoints"
@@ -54,6 +79,7 @@ sleep 1
 
 echo "[*] Starting node 1 - Bank 1"
 geth --datadir qdata/dd1 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
+# PRIVATE_CONFIG=tm1.conf nohup geth --datadir qdata/dd1 $GLOBAL_ARGS --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
 
 echo "[*] Starting node 2 - Bank 2"
 geth --datadir qdata/dd2 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50402 --rpcport 22001 --port 21001 2>>qdata/logs/2.log &
