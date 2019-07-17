@@ -78,20 +78,20 @@ constellation-node tm5.conf 2>> qdata/logs/constellation5.log &
 sleep 1
 
 echo "[*] Starting node 1 - Bank 1"
-geth --datadir qdata/dd1 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
+geth --ipcpath qdata/dd1/geth.ipc --datadir qdata/dd1 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
 # PRIVATE_CONFIG=tm1.conf nohup geth --datadir qdata/dd1 $GLOBAL_ARGS --raftport 50401 --rpcport 22000 --port 21000 2>>qdata/logs/1.log &
 
 echo "[*] Starting node 2 - Bank 2"
-geth --datadir qdata/dd2 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50402 --rpcport 22001 --port 21001 2>>qdata/logs/2.log &
+geth --ipcpath qdata/dd2/geth.ipc --datadir qdata/dd2 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50402 --rpcport 22001 --port 21001 2>>qdata/logs/2.log &
 
 echo "[*] Starting node 3 - Bank 3"
-geth --datadir qdata/dd3 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50403 --rpcport 22002 --port 21002 2>>qdata/logs/3.log &
+geth --ipcpath qdata/dd3/geth.ipc --datadir qdata/dd3 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50403 --rpcport 22002 --port 21002 2>>qdata/logs/3.log &
 
 echo "[*] Starting node 4 - Regulator"
-geth --datadir qdata/dd4 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50404 --rpcport 22003 --port 21003 2>>qdata/logs/4.log &
+geth --ipcpath qdata/dd4/geth.ipc --datadir qdata/dd4 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50404 --rpcport 22003 --port 21003 2>>qdata/logs/4.log &
 
 echo "[*] Starting node 5 - Observer"
-geth --datadir qdata/dd5 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50405 --rpcport 22004 --port 21004 2>>qdata/logs/5.log &
+geth --ipcpath qdata/dd5/geth.ipc --datadir qdata/dd5 $GLOBAL_ARGS --rpccorsdomain "*" --raftport 50405 --rpcport 22004 --port 21004 2>>qdata/logs/5.log &
 
 echo "[*] Waiting for nodes to start"
 

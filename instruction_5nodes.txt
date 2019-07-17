@@ -17,21 +17,21 @@ Instructions for setting up a Quorum 5 nodes network
 			./raft-start.sh -> Bring up the nodes
 
 	2 - //Connect to the nodes
-			geth attach ipc:qdata/dd1/geth.ipc	
+			geth attach ipc:"qdata/dd1/geth.ipc"	
 
 	* T2 * (Bank)
 	2 - //Connect to the nodes
-			geth attach ipc:qdata/dd2/geth.ipc	
+			geth attach ipc:"qdata/dd2/geth.ipc"
 
 	* T3 * (Bank)
 	2 - //Connect to the nodes
-			geth attach ipc:qdata/dd3/geth.ipc
+			geth attach ipc:"qdata/dd3/geth.ipc"
 
 	* T4 * (Regulator)
 	2 - //Connect to the nodes
-			geth attach ipc:qdata/dd4/geth.ipc
+			geth attach ipc:"qdata/dd4/geth.ipc"
 
 	* T5 * (Observer)
 	2 - //Connect to the nodes
-			geth attach ipc:qdata/dd5/geth.ipc
+			geth attach ipc:"qdata/dd5/geth.ipc"
 
