@@ -1,8 +1,7 @@
-# quorumPrivateNetwork5Nodes
+# Quorum Private Network with 5 Nodes
 
 
-
-### Instructions for setting up a Quorum 5 nodes network
+## Instructions for setting up a Quorum 5 nodes network
 
 >Requirments -> Ubuntu 16.04
 
@@ -68,4 +67,20 @@ __Terminal 5__ (Observer)
 
 ```
 geth attach ipc:qdata/dd5/geth.ipc
+```
+
+
+## The election Project Deployment
+
+After ```geth attach ipc:qdata/dd1/geth.ipc``` at __Terminal 1__. Truffle project deployment with the instruction ```truffle migrate --reset --compile-all --network quorumNet```. Firstly, check if the network ```quorumNet``` appears at ```the-election/truffle-config.js``` with the following values : 
+
+```
+quorumNet: {
+    host: "localhost",
+    port: 22001, // was 8545
+    network_id: 9354, // Match any network id
+    gasPrice: 0x0,
+    gas: 0xfffff,
+    type: "quorum" // needed for Truffle to support Quorum
+}
 ```
