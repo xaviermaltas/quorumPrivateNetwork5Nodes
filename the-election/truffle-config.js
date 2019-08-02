@@ -19,10 +19,10 @@ module.exports = {
 
     devIns: {
       host: "127.0.0.1",
-      port: 22001, // was 8545
+      port: 22000, // was 8545
       network_id: 9354, // Match any network id
-      gasPrice: 0,
-      gas: 4500000,
+      gasPrice: 0x0,
+      gas: 0xfffff,
       type: "quorum" // needed for Truffle to support Quorum
     },
 

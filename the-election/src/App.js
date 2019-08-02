@@ -48,6 +48,11 @@ export class App extends Component {
 
         this.votationService = new VotationService(this.election);
 
+        //Get the network Id
+        web3.version.getNetwork((err, netId) => {
+            console.log('Network ID : ' + netId);
+        })
+
         //Subscripcio a un event de votacio
         let voteEmited = this.election.VoteEmited();
 
@@ -55,16 +60,23 @@ export class App extends Component {
         
         voteEmited.watch( function(error, result) {
 
-            const{ voter, candidateId , candidateName} = result.args;
-            console.log(voter);
+            if(!error){
+                const{ voter, candidateId , candidateName} = result.args;
+                console.log(voter);
 
-            if( voter === this.state.account ){
-                this.container.success('You purchased a flight to ' + candidateName +' with a cost of ', 'Flight Selling');
+                if( voter === this.state.account ){
+                    this.container.success('You purchased a flight to ' + candidateName +' with a cost of ', 'Flight Selling');
+                }
+                
+                this.container.success( candidateName +' with a cost of ', 'Flight Selling');
+                console.log('The voter ' + voter + ', voted to : ' + candidateName);
+
+            }
+            else{
+                console.log("App.js Error");
+                console.log(error);
             }
             
-            this.container.success( candidateName +' with a cost of ', 'Flight Selling');
-            console.log('The voter ' + voter + ', voted to : ' + candidateName);
-
         }.bind(this));
 
 
