@@ -33,11 +33,9 @@ export class App extends Component {
     async componentDidMount(){
         this.web3 = await getWeb3();
         console.log('Your web3 provider version is: ' + this.web3.version);
-
-        // console.log('get accounts', await this.web3.eth.getAccounts())
-        // console.log('defaultAccount', await this.web3.eth.defaultAccount)
-        // console.log('acoounts', await this.web3.eth.accounts)
-        // console.log('eth', await this.web3.eth)
+        
+        console.log("Current Provider");
+        console.log(this.web3.currentProvider);
         
         var account = ( await this.web3.eth.getAccounts() )[0];
         console.log('Your account is: ' + account);
@@ -45,7 +43,6 @@ export class App extends Component {
         //Here we define an Instance of our Election Smart Contract
         this.election = await ElectionContract(this.web3.currentProvider);
 
-        // console.log('Your current providr is: ' + this.web3.currentProvider);
 
         this.toEther = converter(this.web3);
 
@@ -73,7 +70,7 @@ export class App extends Component {
 
         if(account){
 
-            //Subscripo al event del canvi de compte
+            //Subscripcio al event del canvi de compte
             //Actualització de valors, tornant a executar this.load()
             this.web3.currentProvider.publicConfigStore.on('update', async function(event){
                 this.setState({
