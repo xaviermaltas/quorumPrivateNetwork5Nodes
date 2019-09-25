@@ -1,0 +1,52 @@
+[Inside nodejs]
+var keythereum = require("keythereum");
+
+var datadir = "/home/xavier/Desktop/QuorumProjects/functional_5nodesRTGS/qdata/dd2"
+var datadir = "/home/xavier/Desktop/5nodesNetwork_modifiedFiles_11062019/extendedKeys/node2/geth"
+var datadir = "/home/xavier/Desktop/test-environment/infrastructure/testnet/identities/general1"
+
+var address= "0x_________________"
+
+const password = "node_"
+const password = "Passw0rd"
+
+var keyObject = keythereum.importFromFile(address, datadir);
+var privateKey = keythereum.recover(password, keyObject);
+console.log(privateKey.toString('hex'));
+
+
+[Private Keys]
+    [N1]
+    Address : 0x207058d981e40615783b60d81935017f0d7d8d05
+    PrivateKey : 237485853b9ba0ea149cbe08a5aeac3194ad4c8dba39d2a7dbaecb7d3ca99748
+
+    [N2]
+    Address : 0x4cc05127d4ec730fe4f15995e2f920e60d481685
+    PrivateKey : b24bd80c4eb721ef144e342990ba3ca2b9dd3de0073bb24cd04cf0a32c3b9279
+
+    [N3]
+    Address : 0x9c80b82de57b5f447b9ee7a35cb70c9ef519241f
+
+
+
+
+
+
+
+
+
+
+
+
+[Alastria Private Keys]
+
+    Address : 0x74d4c56d8dcbc10a567341bfac6da0a8f04dc41d
+    PrivateKey : 4e452dca54815a6190a3b3d09fdf397d5cbd16577a1ef63e7ade681428ebc731
+
+    Address : 0x0e596199ea5c6d3cbc713183e7514be022a19385
+    PrivateKey : c9c81a7554032d2a465bcda76f2738544302980fe951730c9b7a739f774123a8
+
+
+
+    test Keys
+    
