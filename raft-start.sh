@@ -14,6 +14,7 @@ set -e
 
 
 #GLOBAL_ARGS=" --raft --rpc --rpcaddr 0.0.0.0 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum --emitcheckpoints"
+GAS_FLAG="--gasPrice 0"
 GLOBAL_ARGS=" --networkid=9354 --raft --rpc --rpcaddr 127.0.0.1 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,rpc,web3 --emitcheckpoints"
 
 echo "[*] Starting Constellation nodes"

@@ -7,8 +7,7 @@
     "eip155Block": 0,
     "eip158Block": 0,
     "byzantiumBlock": 0,
-    "isQuorum": true,
-    "ethash": {}
+    "isQuorum": true
   },
   "difficulty": "0x0",
   "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000",
